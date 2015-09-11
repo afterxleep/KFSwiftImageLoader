@@ -11,10 +11,8 @@
 		6424343E1AE031A7000A524A /* ButtonImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6424343D1AE031A7000A524A /* ButtonImageTableViewCell.swift */; };
 		6424344D1AE05535000A524A /* HomeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6424344C1AE05535000A524A /* HomeInterfaceController.swift */; };
 		6424344F1AE05535000A524A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6424344E1AE05535000A524A /* Images.xcassets */; };
-		642434531AE05535000A524A /* SwiftImageLoader WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 642434521AE05535000A524A /* SwiftImageLoader WatchKit App.app */; };
 		6424345B1AE05535000A524A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642434591AE05535000A524A /* Interface.storyboard */; };
 		6424345D1AE05535000A524A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6424345C1AE05535000A524A /* Images.xcassets */; };
-		642434601AE05535000A524A /* SwiftImageLoader WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 642434481AE05535000A524A /* SwiftImageLoader WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6424346B1AE09523000A524A /* KFSwiftImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F84AE71AE0157F003ECBEA /* KFSwiftImageLoader.framework */; };
 		6424346D1AE09624000A524A /* KFSwiftImageLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64F84AE71AE0157F003ECBEA /* KFSwiftImageLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		64AA84B61AE18B6F004F0956 /* TableImageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA84B51AE18B6F004F0956 /* TableImageInterfaceController.swift */; };
@@ -363,23 +361,11 @@
 		64F84AFE1AE0157F003ECBEA /* KFSwiftImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F84AE71AE0157F003ECBEA /* KFSwiftImageLoader.framework */; };
 		64F84AFF1AE0157F003ECBEA /* KFSwiftImageLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64F84AE71AE0157F003ECBEA /* KFSwiftImageLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		64F84B131AE015DB003ECBEA /* KFSwiftImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 64F84B0F1AE015DB003ECBEA /* KFSwiftImageLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D691B5251BA28E80005AE584 /* SwiftImageLoader WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 642434481AE05535000A524A /* SwiftImageLoader WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D691B5281BA28E80005AE584 /* SwiftImageLoader WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 642434521AE05535000A524A /* SwiftImageLoader WatchKit App.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		642434541AE05535000A524A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64C4749C1AB901B900361603 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 642434511AE05535000A524A;
-			remoteInfo = "SwiftImageLoader WatchKit App";
-		};
-		6424345E1AE05535000A524A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64C4749C1AB901B900361603 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 642434471AE05535000A524A;
-			remoteInfo = "SwiftImageLoader WatchKit Extension";
-		};
 		6424346E1AE09624000A524A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 64C4749C1AB901B900361603 /* Project object */;
@@ -394,20 +380,23 @@
 			remoteGlobalIDString = 64F84AE61AE0157F003ECBEA;
 			remoteInfo = KFSwiftImageLoader;
 		};
+		D691B5231BA28E80005AE584 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64C4749C1AB901B900361603 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 642434471AE05535000A524A;
+			remoteInfo = "SwiftImageLoader WatchKit Extension";
+		};
+		D691B5261BA28E80005AE584 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64C4749C1AB901B900361603 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 642434511AE05535000A524A;
+			remoteInfo = "SwiftImageLoader WatchKit App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		642434671AE05535000A524A /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				642434601AE05535000A524A /* SwiftImageLoader WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		642434701AE09625000A524A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +417,28 @@
 				64F84AFF1AE0157F003ECBEA /* KFSwiftImageLoader.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D691B5291BA28E80005AE584 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D691B5251BA28E80005AE584 /* SwiftImageLoader WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D691B52A1BA28E80005AE584 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D691B5281BA28E80005AE584 /* SwiftImageLoader WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -1378,28 +1389,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				642434551AE05535000A524A /* PBXTargetDependency */,
 				6424346F1AE09624000A524A /* PBXTargetDependency */,
 			);
 			name = "SwiftImageLoader WatchKit Extension";
 			productName = "SwiftImageLoader WatchKit Extension";
 			productReference = 642434481AE05535000A524A /* SwiftImageLoader WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		642434511AE05535000A524A /* SwiftImageLoader WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 642434611AE05535000A524A /* Build configuration list for PBXNativeTarget "SwiftImageLoader WatchKit App" */;
 			buildPhases = (
 				642434501AE05535000A524A /* Resources */,
+				D691B5291BA28E80005AE584 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D691B5241BA28E80005AE584 /* PBXTargetDependency */,
 			);
 			name = "SwiftImageLoader WatchKit App";
 			productName = "SwiftImageLoader WatchKit App";
 			productReference = 642434521AE05535000A524A /* SwiftImageLoader WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
+			productType = "com.apple.product-type.application.watchapp2";
 		};
 		64C474A31AB901B900361603 /* SwiftImageLoader */ = {
 			isa = PBXNativeTarget;
@@ -1409,13 +1421,13 @@
 				64C474A11AB901B900361603 /* Frameworks */,
 				64C474A21AB901B900361603 /* Resources */,
 				64F84B031AE0157F003ECBEA /* Embed Frameworks */,
-				642434671AE05535000A524A /* Embed App Extensions */,
+				D691B52A1BA28E80005AE584 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				64F84AFD1AE0157F003ECBEA /* PBXTargetDependency */,
-				6424345F1AE05535000A524A /* PBXTargetDependency */,
+				D691B5271BA28E80005AE584 /* PBXTargetDependency */,
 			);
 			name = SwiftImageLoader;
 			productName = SwiftImageLoader;
@@ -1446,7 +1458,9 @@
 		64C4749C1AB901B900361603 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Kiavash Faisali";
 				TargetAttributes = {
 					642434471AE05535000A524A = {
@@ -1490,7 +1504,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6424344F1AE05535000A524A /* Images.xcassets in Resources */,
-				642434531AE05535000A524A /* SwiftImageLoader WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1890,16 +1903,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		642434551AE05535000A524A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 642434511AE05535000A524A /* SwiftImageLoader WatchKit App */;
-			targetProxy = 642434541AE05535000A524A /* PBXContainerItemProxy */;
-		};
-		6424345F1AE05535000A524A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 642434471AE05535000A524A /* SwiftImageLoader WatchKit Extension */;
-			targetProxy = 6424345E1AE05535000A524A /* PBXContainerItemProxy */;
-		};
 		6424346F1AE09624000A524A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 64F84AE61AE0157F003ECBEA /* KFSwiftImageLoader */;
@@ -1909,6 +1912,16 @@
 			isa = PBXTargetDependency;
 			target = 64F84AE61AE0157F003ECBEA /* KFSwiftImageLoader */;
 			targetProxy = 64F84AFC1AE0157F003ECBEA /* PBXContainerItemProxy */;
+		};
+		D691B5241BA28E80005AE584 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 642434471AE05535000A524A /* SwiftImageLoader WatchKit Extension */;
+			targetProxy = D691B5231BA28E80005AE584 /* PBXContainerItemProxy */;
+		};
+		D691B5271BA28E80005AE584 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 642434511AE05535000A524A /* SwiftImageLoader WatchKit App */;
+			targetProxy = D691B5261BA28E80005AE584 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1937,6 +1950,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1944,11 +1958,12 @@
 				);
 				IBSC_MODULE = SwiftImageLoader_WatchKit_Extension;
 				INFOPLIST_FILE = "SwiftImageLoader WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kiavashfaisali.SwiftImageLoader.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -1957,16 +1972,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				IBSC_MODULE = SwiftImageLoader_WatchKit_Extension;
 				INFOPLIST_FILE = "SwiftImageLoader WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LLVM_LTO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kiavashfaisali.SwiftImageLoader.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -1982,9 +1999,13 @@
 				INFOPLIST_FILE = "SwiftImageLoader WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kiavashfaisali.SwiftImageLoader.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -1998,10 +2019,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LLVM_LTO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kiavashfaisali.SwiftImageLoader.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_DISABLE_SAFETY_CHECKS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -2025,6 +2050,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2093,8 +2119,9 @@
 				INFOPLIST_FILE = SwiftImageLoader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiavashfaisali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
 		};
@@ -2109,9 +2136,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LLVM_LTO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiavashfaisali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_DISABLE_SAFETY_CHECKS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -2134,10 +2162,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiavashfaisali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2160,11 +2189,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LLVM_LTO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiavashfaisali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_DISABLE_SAFETY_CHECKS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

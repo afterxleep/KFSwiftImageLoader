@@ -30,7 +30,7 @@ public extension MKAnnotationView {
             return objc_getAssociatedObject(self, &completionHolderAssociationKey) as? CompletionHolder
         }
         set {
-            objc_setAssociatedObject(self, &completionHolderAssociationKey, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN))
+            objc_setAssociatedObject(self, &completionHolderAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
     
@@ -38,9 +38,9 @@ public extension MKAnnotationView {
     /**
     Asynchronously downloads an image and loads it into the view using a URL string.
     
-    :param: string The image URL in the form of a String.
-    :param: placeholderImage An optional UIImage representing a placeholder image that is loaded into the view while the asynchronous download takes place. The default value is nil.
-    :param: completion An optional closure that is called to indicate completion of the intended purpose of this method. It returns two values: the first is a Bool indicating whether everything was successful, and the second is an optional NSError which will be non-nil should an error occur. The default value is nil.
+    - parameter string: The image URL in the form of a String.
+    - parameter placeholderImage: An optional UIImage representing a placeholder image that is loaded into the view while the asynchronous download takes place. The default value is nil.
+    - parameter completion: An optional closure that is called to indicate completion of the intended purpose of this method. It returns two values: the first is a Bool indicating whether everything was successful, and the second is an optional NSError which will be non-nil should an error occur. The default value is nil.
     */
     final public func loadImageFromURLString(string: String, placeholderImage: UIImage? = nil, completion: ((finished: Bool, error: NSError!) -> Void)? = nil) {
         if let url = NSURL(string: string) {
@@ -51,9 +51,9 @@ public extension MKAnnotationView {
     /**
     Asynchronously downloads an image and loads it into the view using an NSURL object.
     
-    :param: url The image URL in the form of an NSURL object.
-    :param: placeholderImage An optional UIImage representing a placeholder image that is loaded into the view while the asynchronous download takes place. The default value is nil.
-    :param: completion An optional closure that is called to indicate completion of the intended purpose of this method. It returns two values: the first is a Bool indicating whether everything was successful, and the second is an optional NSError which will be non-nil should an error occur. The default value is nil.
+    - parameter url: The image URL in the form of an NSURL object.
+    - parameter placeholderImage: An optional UIImage representing a placeholder image that is loaded into the view while the asynchronous download takes place. The default value is nil.
+    - parameter completion: An optional closure that is called to indicate completion of the intended purpose of this method. It returns two values: the first is a Bool indicating whether everything was successful, and the second is an optional NSError which will be non-nil should an error occur. The default value is nil.
     */
     final public func loadImageFromURL(url: NSURL, placeholderImage: UIImage? = nil, completion: ((finished: Bool, error: NSError!) -> Void)? = nil) {
         let cacheManager = KFImageCacheManager.sharedInstance
@@ -65,9 +65,9 @@ public extension MKAnnotationView {
     /**
     Asynchronously downloads an image and loads it into the view using an NSURLRequest object.
     
-    :param: request The image URL in the form of an NSURLRequest object.
-    :param: placeholderImage An optional UIImage representing a placeholder image that is loaded into the view while the asynchronous download takes place. The default value is nil.
-    :param: completion An optional closure that is called to indicate completion of the intended purpose of this method. It returns two values: the first is a Bool indicating whether everything was successful, and the second is an optional NSError which will be non-nil should an error occur. The default value is nil.
+    - parameter request: The image URL in the form of an NSURLRequest object.
+    - parameter placeholderImage: An optional UIImage representing a placeholder image that is loaded into the view while the asynchronous download takes place. The default value is nil.
+    - parameter completion: An optional closure that is called to indicate completion of the intended purpose of this method. It returns two values: the first is a Bool indicating whether everything was successful, and the second is an optional NSError which will be non-nil should an error occur. The default value is nil.
     */
     final public func loadImageFromRequest(request: NSURLRequest, placeholderImage: UIImage? = nil, completion: ((finished: Bool, error: NSError!) -> Void)? = nil) {
         self.completionHolder = CompletionHolder(completion: completion)
@@ -79,7 +79,7 @@ public extension MKAnnotationView {
         
         let cacheManager = KFImageCacheManager.sharedInstance
         let fadeAnimationDuration = cacheManager.fadeAnimationDuration
-        let urlAbsoluteString = request.URL!.absoluteString!
+        let urlAbsoluteString = request.URL!.absoluteString
         
         func loadImage(image: UIImage) -> Void {
             UIView.transitionWithView(self, duration: fadeAnimationDuration, options: .TransitionCrossDissolve, animations: {
@@ -116,14 +116,14 @@ public extension MKAnnotationView {
                 cacheManager.setIsDownloadingFromURL(true, forURLString: urlAbsoluteString)
                 
                 let dataTask = cacheManager.session.dataTaskWithRequest(request) {
-                    (data: NSData!, response: NSURLResponse!, error: NSError!) in
+                    (data: NSData?, response: NSURLResponse?, error: NSError?) in
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         var finished = false
                         
                         // If there is no error, load the image into the image view and cache it.
                         if error == nil {
-                            if let image = UIImage(data: data) {
+                            if let image = UIImage(data: data!) {
                                 UIView.transitionWithView(self, duration: fadeAnimationDuration, options: .TransitionCrossDissolve, animations: {
                                     self.image = image
                                 }, completion: nil)
@@ -131,17 +131,17 @@ public extension MKAnnotationView {
                                 cacheManager[urlAbsoluteString] = image
                                 
                                 let responseDataIsCacheable = cacheManager.diskCacheMaxAge > 0 &&
-                                    Double(data.length) <= 0.05 * Double(NSURLCache.sharedURLCache().diskCapacity) &&
+                                    Double(data!.length) <= 0.05 * Double(NSURLCache.sharedURLCache().diskCapacity) &&
                                     (cacheManager.session.configuration.requestCachePolicy == .ReturnCacheDataElseLoad ||
                                         cacheManager.session.configuration.requestCachePolicy == .ReturnCacheDataDontLoad) &&
                                     (request.cachePolicy == .ReturnCacheDataElseLoad ||
                                         request.cachePolicy == .ReturnCacheDataDontLoad)
                                 
                                 if let httpResponse = response as? NSHTTPURLResponse, url = httpResponse.URL where responseDataIsCacheable {
-                                    var allHeaderFields = httpResponse.allHeaderFields
+                                    var allHeaderFields = httpResponse.allHeaderFields as! [String: String]
                                     allHeaderFields["Cache-Control"] = "max-age=\(cacheManager.diskCacheMaxAge)"
                                     if let cacheControlResponse = NSHTTPURLResponse(URL: url, statusCode: httpResponse.statusCode, HTTPVersion: "HTTP/1.1", headerFields: allHeaderFields) {
-                                        let cachedResponse = NSCachedURLResponse(response: cacheControlResponse, data: data, userInfo: ["creationTimestamp": CACurrentMediaTime()], storagePolicy: .Allowed)
+                                        let cachedResponse = NSCachedURLResponse(response: cacheControlResponse, data: data!, userInfo: ["creationTimestamp": CACurrentMediaTime()], storagePolicy: .Allowed)
                                         NSURLCache.sharedURLCache().storeCachedResponse(cachedResponse, forRequest: request)
                                     }
                                 }
